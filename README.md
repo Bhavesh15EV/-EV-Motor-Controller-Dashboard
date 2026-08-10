@@ -2,9 +2,8 @@
 
 A fully configurable EV drivetrain simulation dashboard — switch between **3-phase** and **6-phase** motor/inverter systems, configure vehicle parameters (GVW, frontal area, drag coefficient, rolling friction), motor parameters (poles, torque, current, speed), and run loss analysis over real drive cycles.
 
-## 🚀 Live Demo
-<!-- Replace with your GitHub Pages URL after deploy -->
-**[View Live Dashboard →](https://YOUR-USERNAME.github.io/ev-motor-controller-dashboard/)**
+
+
 
 ## ✨ Features
 
