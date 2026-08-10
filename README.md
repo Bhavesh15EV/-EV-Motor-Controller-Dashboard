@@ -16,7 +16,7 @@ A fully configurable EV drivetrain simulation dashboard — switch between **3-p
 | **Road grade** | Simulate uphill/downhill driving |
 | **Export table** | Full data table of every simulation point |
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Dashboard Overview
 ![Dashboard Overview](screenshots/dashboard-overview.png)
