@@ -2,9 +2,6 @@
 
 A fully configurable EV drivetrain simulation dashboard — switch between **3-phase** and **6-phase** motor/inverter systems, configure vehicle parameters (GVW, frontal area, drag coefficient, rolling friction), motor parameters (poles, torque, current, speed), and run loss analysis over real drive cycles.
 
-
-
-
 ## ✨ Features
 
 | Feature | Detail |
@@ -12,12 +9,35 @@ A fully configurable EV drivetrain simulation dashboard — switch between **3-p
 | **3-Phase / 6-Phase switching** | Toggle motor + inverter topology instantly |
 | **Vehicle presets** | City bus, mini bus, heavy truck, mining truck |
 | **Full physics engine** | Forces, torques, RPM, all configurable |
-| **4-region current formula** | Per your datasheet — region 1–4 with PF/multiplier |
+| **4-region current formula** | Per your datasheet — region 1-4 with PF/multiplier |
 | **Drive cycles** | WLTC, City Bus, Highway, Indian Bus, or custom |
 | **Loss breakdown** | Copper, iron, mechanical, IGBT conduction, switching |
 | **Interactive charts** | Motor RPM, torque, power, current, losses over time |
 | **Road grade** | Simulate uphill/downhill driving |
 | **Export table** | Full data table of every simulation point |
+
+## 📸 Screenshots
+
+### Dashboard Overview
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+### Motor Configuration
+![Motor Configuration](screenshots/motor-config.png)
+
+### Inverter / Controller Configuration
+![Inverter Configuration](screenshots/inverter-config.png)
+
+### Motor Analysis Charts
+![Motor Analysis Charts](screenshots/motor-charts.png)
+
+### Motor Loss Breakdown
+![Motor Loss Breakdown](screenshots/motor-loss-breakdown.png)
+
+### Inverter Loss Breakdown & Comparison
+![Inverter Loss Breakdown](screenshots/inverter-loss-breakdown.png)
+
+### Formula & Parameter Editor
+![Formula & Parameter Editor](screenshots/formula-editor.png)
 
 ## 🛠️ Local Development
 
@@ -46,21 +66,21 @@ npm run preview
 - **Recharts** (charts)
 - **Lucide React** (icons)
 
-## 🔧 Project Structure
+## 🗂️ Project Structure
 ```
 src/
-├── App.tsx                    # Main app, all vehicle/motor/inverter config UI
-├── utils/
-│   └── motorPhysics.ts        # Physics engine — all calculations live here
-└── components/
-    ├── VehicleParams.tsx       # Specs panel
-    ├── FormulaEditor.tsx       # Tune formula constants from UI
-    ├── AnalysisCharts.tsx      # Recharts graphs
-    ├── KPICards.tsx            # Summary stat cards
-    ├── DataTable.tsx           # Row-by-row simulation data
-    ├── LossPieChart.tsx        # Loss breakdown pie
-    ├── DriveCycleEditor.tsx    # Drive cycle input
-    └── CyclePreview.tsx        # Cycle speed preview chart
+  App.tsx                     # Main app, all vehicle/motor/inverter config UI
+  utils/
+    motorPhysics.ts           # Physics engine — all calculations live here
+  components/
+    VehicleParams.tsx         # Specs panel
+    FormulaEditor.tsx         # Tune formula constants from UI
+    AnalysisCharts.tsx        # Recharts graphs
+    KPICards.tsx               # Summary stat cards
+    DataTable.tsx               # Row-by-row simulation data
+    LossPieChart.tsx            # Loss breakdown pie
+    DriveCycleEditor.tsx        # Drive cycle input
+    CyclePreview.tsx             # Cycle speed preview chart
 ```
 
 ## 📐 Physics Reference
@@ -72,7 +92,7 @@ src/
 | 2 | Power > 144kW AND rpm > 1600 | `Power_kW × 0.63` |
 | 3 | Power < 144kW AND rpm > 1600 | `Power_kW × 1.05` |
 | 4a | Power > 144kW AND rpm < 1600 AND torque > 1250 Nm | `((T/4.7)/1.414) × 0.725` |
-| 4b | Power > 144kW AND rpm < 1600 AND torque ≤ 1250 Nm | `((T/4.7)/1.414) × 0.9` |
+| 4b | Power > 144kW AND rpm < 1600 AND torque < 1250 Nm | `((T/4.7)/1.414) × 0.9` |
 
 All formula constants are editable via the **Formulas** tab in the dashboard.
 
