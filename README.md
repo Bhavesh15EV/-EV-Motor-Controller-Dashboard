@@ -16,7 +16,7 @@ A fully configurable EV drivetrain simulation dashboard — switch between **3-p
 | **Road grade** | Simulate uphill/downhill driving |
 | **Export table** | Full data table of every simulation point |
 
-##  Screenshots
+Demo link "https://bhavesh15ev.github.io/-EV-Motor-Controller-Dashboard/"
 
 ### Dashboard Overview
 ![Dashboard Overview](screenshots/dashboard-overview.png)
